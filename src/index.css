@@ -1,13 +1,345 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  /* Navbar */
+  .navbar {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  .navbar-nav {
+    margin-left: auto;
+  }
+
+  .nav-item {
+    padding: 0 15px;
+  }
+
+  /* Hero Section - Fullscreen with Animated Gradient */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+  /*  background: linear-gradient(135deg, #8e44ad, #3498db);*/
+    background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease-in-out infinite;
+  }
+
+  /* Animated Gradient Background */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Particles Styling */
+  #particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  /* Overlay for Darker Effect */
+  .hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  /* Hero Content */
+  .hero-section .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .hero-text {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto 20px;
+  }
+
+  /* Animated Button */
+  .hero-button {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-button:hover {
+    transform: scale(1.05);
+    background-color: #6a1b9a;
+    
+  }
+
+  /* Hanging Div Effect */
+  .hanging-div {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    transform-origin: top center;
+    animation: swing 4s infinite ease-in-out;
+  }
+
+  /* Vertical Pen Hanging Effect */
+  .pen-hanging {
+    font-size: 2rem;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform-origin: top center;
+    transform: translateX(-50%);
+    animation: swing 2s infinite ease-in-out;
+  }
+
+  /* Swing Animation */
+  @keyframes swing {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+  }
+
+  /* Hanging Page at the End */
+  .hanging-page {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform-origin: center center;
+    transform: translateX(-50%);
+    animation: verticalSwing 2s infinite ease-in-out;
+  }
+
+  @keyframes verticalSwing {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+    .hero-text {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    .hero-text {
+      font-size: 1.2rem;
+    }
+    .hero-button {
+      font-size: 1.1rem;
+      padding: 10px 20px;
+    }
+    .hanging-div {
+      width: 100px;
+      height: 100px;
+      font-size: 1rem;
+      top: 40px;
+      right: 30px;
+    }
+    .pen-hanging {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    .hero-text {
+      font-size: 1rem;
+    }
+    .hero-button {
+      font-size: 1rem;
+      padding: 8px 16px;
+    }
+    .hanging-div {
+      width: 80px;
+      height: 80px;
+      font-size: 0.9rem;
+      top: 30px;
+      right: 20px;
+    }
+    .pen-hanging {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Features Section */
+  .features {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .feature-box {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Comparison Section */
+  .comparison {
+    background: #f4f4f4;
+    padding: 60px 20px;
+  }
+
+  /* Pricing Section */
+  .pricing {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .pricing-box {
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .pricing-box:hover {
+    transform: translateY(-5px);
+  }
+
+  /* Footer */
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  /* Responsive Design - More Specific */
+  @media (max-width: 992px) {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+
+    .hero-section p {
+      font-size: 1rem;
+    }
+
+    .feature-box {
+      padding: 15px;
+    }
+
+    .pricing-box {
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 60px 15px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero-section p {
+      font-size: 0.95rem;
+    }
+
+    .feature-box {
+      padding: 10px;
+    }
+
+    .pricing-box {
+      padding: 15px;
+    }
+
+    .footer {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-section {
+      padding: 50px 10px;
+    }
+
+    .hero-section h1 {
+      font-size: 1.5rem;
+    }
+
+    .hero-section p {
+      font-size: 0.9rem;
+    }
+
+    .feature-box {
+      padding: 8px;
+    }
+
+    .pricing-box {
+      padding: 10px;
+    }
+
+    .footer {
+      font-size: 12px;
+    }
+  }
